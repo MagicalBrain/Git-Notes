@@ -287,12 +287,15 @@ git branch [NewBranch]
 ### 单独从远程库拉下某分支
 
 ```bash
+git fetch [locate branch name]
 git checkout -b [locate branch name] [remote name]/[remove branch name]
 ```
 
 例如我想拉取sample库（sample是`git remote -v`里的名字）的old分支
 
 ```bash
+# 先同步分支历史信息到本地
+git fetch sample
 git checkout -b old sample/old
 ```
 
