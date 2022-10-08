@@ -79,6 +79,16 @@ git submodule update --init --recursive
 
 ## 如何添加module
 
+```bash
+git submodule add [module urls]
+```
+
+例如：
+```bash
+# 添加本仓库作为submodule
+git submodule add https://gitee.com/CPLASF000000/git-notes.git
+```
+
 ## 使用module的好处是什么？
 
 如果你直接依赖别人的项目，那么使用module来依赖，别人项目更新的时候不会影响到你这个项目；
