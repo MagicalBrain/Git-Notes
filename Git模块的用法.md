@@ -89,6 +89,37 @@ git submodule add [module urls]
 git submodule add https://gitee.com/CPLASF000000/git-notes.git
 ```
 
+## 如何删除module
+
+```bash
+git submodule deinit [module name]
+git rm -r [module\'s dir]
+```
+
+例如：
+```bash
+git submodule deinit Git-Notes
+git rm -r Git-Notes/
+```
+
+然后检查`.gitmodules`是否还有相关信息；
+检查`.git/module/`下是否还有相关模块同名的目录
+
+## 如何修改submodule的文件并提交修改
+
+首先我们得知道，submodule在`git submodule update`之后是处于所谓的“游离态”的，这个时候如果对其进行修改即使commit成功了也无法push（push之后comit的内容会不见）
+那怎么办呢，如果还没有修改，那么先checkout到工作分支（例如master）之后再进行修改；
+如果已经在游离态下修改了，那就直接新建一个branch然后checkout到master进行合并，然后把刚才新建的分支删除就可以了。
+
+```bash
+git branch new_branch
+git checkout master
+git merge new_branch
+git branch -d new_branch
+```
+
+## 如何处理submodule的冲突
+
 ## 使用module的好处是什么？
 
 如果你直接依赖别人的项目，那么使用module来依赖，别人项目更新的时候不会影响到你这个项目；
