@@ -118,11 +118,23 @@ git merge new_branch
 git branch -d new_branch
 ```
 
+当处于工作分支上时，submodule可以和单独项目一样push和pull等操作。
+
+## 如何更新submodule
+
+```bash
+git submodule --remote
+```
+
 ## 如何处理submodule的冲突
+
+等碰到这种情况的时候再记录。
 
 ## 使用module的好处是什么？
 
 如果你直接依赖别人的项目，那么使用module来依赖，别人项目更新的时候不会影响到你这个项目；
+你如果更新了module也不会影响到别人的项目。
+
 如果你想用到别人项目的更新，直接更新`git submodule update`就可以了.
 
-灵活依赖只是好处之一，关键还可以给你的项目节省空间。
+灵活依赖只是好处之一，关键还可以给你的项目节省依赖库所需的空间。
