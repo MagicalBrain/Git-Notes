@@ -123,8 +123,10 @@ git branch -d new_branch
 ## 如何更新submodule
 
 ```bash
-git submodule --remote
+git submodule update --remote
 ```
+
+将submodule的修改更新到本项目里。
 
 ## 如何处理submodule的冲突
 
